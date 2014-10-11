@@ -25,9 +25,12 @@ exports.getYousayData = function (req, res) {
                 password: 'afs25'
             }
         }, function (error, response, body) {
+            if (error) {
+                return console.error('Authentication failed: ', error);
+            }
             req.session.cook = response.headers['set-cookie'].toString();
-            requestYousayData()
-        });                
+            requestYousayData();
+        });
     } else {
         requestYousayData();
     }
@@ -48,9 +51,18 @@ exports.getYousayData = function (req, res) {
             headers: {
                 'cookie': req.session.cook
             }
-        }, function (error, respon, body) {
-            res.contentType('text/html; charset=windows-1255');
-            res.end(body);
+        }, function (error, response, body) {
+            if (!error && response.statusCode == 200) {
+                res.contentType('text/html'); // 'text/html; charset=windows-1255'
+
+                // Difficults to convert 'body' to json string before encoding hebrew problems
+                // body  - is a buffer
+                // toString() encode values by 'UTF8' encoding and it is broke hevrew data
+                //var jsonRes = '[' + body.toString('').replace(/#/gi, '][') + ']';
+                //var buffer = new Buffer(body.toString());
+                
+                res.end(body);
+            }
         });
     }
 };
