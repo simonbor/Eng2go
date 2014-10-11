@@ -53,7 +53,7 @@ exports.getYousayData = function (req, res) {
             }
         }, function (error, response, body) {
             if (!error && response.statusCode == 200) {
-                res.contentType('text/html'); // 'text/html; charset=windows-1255'
+                res.contentType('text/html; charset=windows-1255');
 
                 // Difficults to convert 'body' to json string before encoding hebrew problems
                 // body  - is a buffer
