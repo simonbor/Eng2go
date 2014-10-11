@@ -1,0 +1,2 @@
+﻿jQuery requestHeaders value is - 
+"text/javascript, application/javascript, application/ecmascript, application/x-ecmascript, */*; q=0.01"
