@@ -37,3 +37,16 @@ body > .container {
 code {
   font-size: 80%;
 }
+
+
+/*
+------------------------------------------------- */
+.hbr_sect{
+    direction: rtl;
+}
+.words {
+    direction: rtl;
+    list-style: none;
+    padding: 0px;
+    /*margin: 0px;*/
+}

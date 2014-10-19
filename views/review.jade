@@ -27,7 +27,7 @@ block content
   p
     | Vivamus hendrerit arcu sed erat molestie
     .input-group
-      input(type="number", min="1", max="30", value="1", maxlength="2", size="2").form-control#ysNum
+      input(type="number", min="1", max="35", value="1", maxlength="2", size="2").form-control#ysNum
       span.input-group-btn
         //button.btn.btn-default(type="button") Go!
         button.btn.btn-default(data-toggle="modal" data-target=".bs-example-modal-lg")#goBtn Go!
@@ -39,11 +39,17 @@ block content
               button(type="button" class="close" data-dismiss="modal")
                 span(aria-hidden="true") x
                 span.sr-only Close
-              h4.modal-title#myLargeModalLabel YouSay #
+              h4.modal-title#myLargeModalLabel YouSay #13
             .modal-body 
-              .modal-body-header#m_header [body]
+              .modal-body-header#m_header
+              .modal-body-body
+                ul.words
+                  //li לאחר - To be late
+                  //li טיסה - Flight
+                .hbr_sect
+                .eng_sect
               ul.pager
                 li.previous
-                  a(href="#") &larr; Older
+                  a#prev(href="#") &larr; Older
                 li.next
-                  a(href="#") Newer &rarr;
+                  a#next(href="#") Newer &rarr;

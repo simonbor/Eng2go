@@ -1,12 +1,38 @@
-﻿
+﻿var index = 1;
+var ys_data = '';
+
+function goNext() {
+    if (index < (ys_data.length - 1)) {
+        go(++index);
+    }
+}
+function goPrev() {
+    if (index > 2) {
+        go(--index);
+    }    
+}
+
+function go(i){
+    $('.hbr_sect, .eng_sect').empty();
+    $('.hbr_sect').text(ys_data[i].hbr);
+    $('.eng_sect').text(ys_data[i].eng);
+}
+
 $(document).ready(function () {
+    
+    $('#prev').on('click', function () {
+        goPrev();
+    });
+    $('#next').on('click', function () {
+        goNext();
+    });
+
     $('#goBtn').on('click', function () {
         var lvlNum = $('#level > label.active input').val();
         var revMod = $('#mode > label.active input').val();
         var youSay = $('#ysNum').val();
         var url = '/getYousayData/?rm=' + revMod + '&ln=' + lvlNum + '&ys=' + youSay;
         
-        $('#m_header').empty();
         $('#myLargeModalLabel').html('YouSay #' + youSay);
         
         $.ajax({
@@ -18,26 +44,24 @@ $(document).ready(function () {
         });
         
         function InstantVisitMoveReady(status, statusText, responses, responseHeaders) {
-            if (status == '-1') {
+            if (status == '-1' || statusText != 'success') {
                 $('#m_header').empty().append('<p>Error ocured...</p>');
                 return;
             }
-            var json = '';
+
+            ys_data = '';
+            index = 1;
+
             $.each(status.split('#'), function (index, value) {
                 value = value.replace(/\'/gi, '\'\'').replace(/\"/gi, '\\"\"');
                 if ((index + 1) % 2 == 0) {
-                    json += '"eng":"' + value + '"},';
+                    ys_data += '"eng":"' + value + '"},';
                 } else {
-                    json += '{"hbr":"' + value + '",';
+                    ys_data += '{"hbr":"' + value + '",';
                 }
             });
-
-            json = JSON.parse('[' + json.substring(0, json.length - 1) + ']');
-            
-            $('#m_header').empty().append('<p>' + json + '</p>');
-            $('#m_header').append('<p>' + statusText + '</p>');
-            $('#m_header').append('<p>' + responses + '</p>');
-            $('#m_header').append('<p>' + responseHeaders + '</p>');
+            ys_data = JSON.parse('[' + ys_data.substring(0, ys_data.length - 1) + ']');
+            goNext();  
         }
     });
 });
