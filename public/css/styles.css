@@ -41,12 +41,31 @@ code {
 
 /*
 ------------------------------------------------- */
-.hbr_sect{
+.modal-body-body {
+    float: right; 
+    width: 100%;
+    min-height: 270px;
+}
+
+.modal-body-body .cont{
+    float: right;
+    width: auto;
+
+    border: 0px solid;
+}
+
+.modal-body-body .cont.separator {
+    width: 100%;
+    line-height: 5px;
+}
+
+
+/*.hbr_sect{
     direction: rtl;
 }
 .words {
     direction: rtl;
     list-style: none;
     padding: 0px;
-    /*margin: 0px;*/
-}
+}*/
+
