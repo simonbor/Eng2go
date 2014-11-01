@@ -20,14 +20,14 @@
     <Content Include="package.json" />
     <Compile Include="app.js" />
     <Compile Include="routes\index.js" />
+    <Content Include="public\css\signin.css" />
+    <Content Include="views\about.jade" />
     <Content Include="views\index.jade" />
     <Content Include="views\layout.jade" />
+    <Content Include="views\login.jade" />
     <Content Include="views\review.jade" />
     <Content Include="public\css\styles.css" />
-    <Compile Include="public\js\jquery-1.11.1.js" />
-    <Compile Include="public\js\mootools-core-1.5.1-full-compat-yc.js" />
     <Compile Include="public\js\yousay.js" />
-    <Compile Include="public\js\yousay_xhr.js" />
     <Content Include="public\bs\css\bootstrap-theme.css" />
     <Content Include="public\bs\css\bootstrap-theme.min.css" />
     <Content Include="public\bs\css\bootstrap.css" />

@@ -4,15 +4,7 @@ html
     meta(name='viewport', content='width=device-width, initial-scale=1')
     link(rel='stylesheet', href='/bs/css/bootstrap.css')
     link(rel='stylesheet', href='/css/styles.css')
-    //script(src="//ajax.googleapis.com/ajax/libs/mootools/1.5.0/mootools-yui-compressed.js")
-    //script(src="/js/mootools-core-1.5.1-full-compat-yc.js")
-    //script(src="//cdnjs.cloudflare.com/ajax/libs/mootools-more/1.5.0/mootools-more.js")
-    //script(src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
     script(src="//code.jquery.com/jquery-1.11.1.js")
-    //script(src="/js/jquery-1.11.1.js")
-    //script(src="//english2go.com/Yousay/getYousayData.asp?data1=FR&data2=3&data3=4")
-
-    
     title #{title} - Eng2go
   body
     .navbar.navbar-default.navbar-static-top(role="navigation")
@@ -26,12 +18,14 @@ html
           a.navbar-brand(href="/") English 2 go
         .navbar-collapse.collapse
           ul.nav.navbar-nav
-            li.active
-              a(href="/") VocabuLab
+            //li.active
+            //  a(href="/") VocabuLab
             li
               a(href="review") Class Review
+            //li
+            //  a(href="spetials") Spetials
             li
-              a(href="spetials") Spetials
+              a(href="/") About
     .container
         .starter-template
           block content

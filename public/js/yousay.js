@@ -23,8 +23,6 @@ $(document).ready(function () {
         index = 3;
         
         $.ajax({
-            //url: 'http://english2go.com/Yousay/getYousayData.asp?data1=FR&data2=3&data3=4',
-            //url: 'http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=8&q=http://www.ynet.co.il/Integration/StoryRss2.xml',
             url: url,
             success: InstantVisitMoveReady,
             error: InstantVisitMoveReady

@@ -26,12 +26,14 @@ app.use(express.bodyParser());
 app.use(express.cookieParser('shhhh, very secret'));
 app.use(express.session({ secret: 'my_secret', cookie: { maxAge: 600000 } }));
 
-app.get('/', function (req, res) {
-    res.render('index', { title: 'Home' })
-})
-app.get('/review', function (req, res) {
-    res.render('review', { title: 'Review' })
-})
+//app.use(express.basicAuth(function (user, pass) {
+//    return user === 'aaa' && pass === 'bbb';
+//}));
+
+app.get('/', routes.index);
+app.get('/login', routes.login);
+app.post('/auth', routes.auth);
+app.get('/review', routes.review);
 app.get('/getYousayData', routes.getYousayData);
 
 app.listen(3000)    
