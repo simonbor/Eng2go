@@ -20,6 +20,7 @@
     <Content Include="package.json" />
     <Compile Include="app.js" />
     <Compile Include="routes\index.js" />
+    <Content Include="public\css\review.css" />
     <Content Include="public\css\signin.css" />
     <Content Include="views\about.jade" />
     <Content Include="views\index.jade" />

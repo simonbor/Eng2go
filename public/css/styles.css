@@ -59,13 +59,19 @@ code {
     line-height: 5px;
 }
 
-
-/*.hbr_sect{
-    direction: rtl;
+/*
+------------------------------------------------- */
+.starter-template .review-template {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
 }
-.words {
-    direction: rtl;
-    list-style: none;
-    padding: 0px;
-}*/
 
+.starter-template .review-template .input-group {
+    width: 215px;
+}
+
+.review-template p {
+    font-size: 21px;
+    font-weight: 300;
+}

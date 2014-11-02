@@ -1,50 +1,51 @@
 ﻿extend layout
 block content
-  p
-    | Vivamus hendrerit arcu sed erat molestie
-    .btn-group(data-toggle="buttons")#level
-      label.btn.btn-default.active
-        input(type="radio", name="level", id="lvl1", value="1") 
-        | Level 1
-      label.btn.btn-default
-        input(type="radio", name="level", id="lvl2", value="2") 
-        | Level 2
-      label.btn.btn-default
-        input(type="radio", name="level", id="lvl3", value="3") 
-        | Level 3
-  p
-    | Vivamus hendrerit arcu sed erat molestie
-    .btn-group(data-toggle="buttons")#mode
-      label.btn.btn-default.active
-        input(type="radio", name="mode", id="md1", value="fr") 
-        | Full
-      label.btn.btn-default
-        input(type="radio", name="mode", id="md2", value="sr") 
-        | Short
-      label.btn.btn-default
-        input(type="radio", name="mode", id="md3", value="br") 
-        | Brief
-  p
-    | Vivamus hendrerit arcu sed erat molestie
-    .input-group
-      input(type="number", min="1", max="35", value="1", maxlength="2", size="2").form-control#ysNum
-      span.input-group-btn
-        //button.btn.btn-default(type="button") Go!
-        button.btn.btn-default(data-toggle="modal" data-target=".bs-example-modal-lg")#goBtn Go!
-
-      .modal.fade.bs-example-modal-lg(tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true")
-        .modal-dialog.modal-lg
-          .modal-content
-            .modal-header
-              button(type="button" class="close" data-dismiss="modal")
-                span(aria-hidden="true") x
-                span.sr-only Close
-              h4.modal-title#myLargeModalLabel YouSay #13
-            .modal-body 
-              .modal-body-header#m_header
-              .modal-body-body
-              ul.pager
-                li.previous
-                  a#prev(href="#") &larr; Older
-                li.next
-                  a#next(href="#") Newer &rarr;
+  .review-template
+    p
+      | Choose YouSay Level
+      .btn-group(data-toggle="buttons")#level
+        label.btn.btn-default.active
+          input(type="radio", name="level", id="lvl1", value="1") 
+          | Level 1
+        label.btn.btn-default
+          input(type="radio", name="level", id="lvl2", value="2") 
+          | Level 2
+        label.btn.btn-default
+          input(type="radio", name="level", id="lvl3", value="3") 
+          | Level 3
+    p
+      | Choose YouSay Type
+      .btn-group(data-toggle="buttons")#mode
+        label.btn.btn-default.active
+          input(type="radio", name="mode", id="md1", value="fr") 
+          | Full
+        label.btn.btn-default
+          input(type="radio", name="mode", id="md2", value="sr") 
+          | Short
+        label.btn.btn-default
+          input(type="radio", name="mode", id="md3", value="br") 
+          | Brief
+    p
+      | Choose YouSay Number
+      .input-group
+        input(type="number", min="1", max="35", value="1", maxlength="2", size="2").form-control#ysNum
+        span.input-group-btn
+          //button.btn.btn-default(type="button") Go!
+          button.btn.btn-default(data-toggle="modal" data-target=".bs-example-modal-lg")#goBtn Go!
+  
+        .modal.fade.bs-example-modal-lg(tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true")
+          .modal-dialog.modal-lg
+            .modal-content
+              .modal-header
+                button(type="button" class="close" data-dismiss="modal")
+                  span(aria-hidden="true") x
+                  span.sr-only Close
+                h4.modal-title#myLargeModalLabel YouSay #13
+              .modal-body 
+                .modal-body-header#m_header
+                .modal-body-body
+                ul.pager
+                  li.previous
+                    a#prev(href="#") &larr; Older
+                  li.next
+                    a#next(href="#") Newer &rarr;
