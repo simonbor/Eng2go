@@ -16,6 +16,7 @@
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
   <ItemGroup>
+    <Compile Include="routes\test.js" />
     <Content Include="Notes.txt" />
     <Content Include="package.json" />
     <Compile Include="app.js" />
