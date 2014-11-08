@@ -2,7 +2,11 @@
 var ys_data = new Array();
 var lastStep;
 
-$(document).ready(function () {
+$(document).ready(function () {    
+    setControls(getCookie('lvl'), getCookie('md'), getCookie('ys'));
+    
+    // Set the range control behavior and style    
+    $(":range").rangeinput();
     
     $('#prev').on('click', function () {
         goPrev();
@@ -16,6 +20,10 @@ $(document).ready(function () {
         var revMod = $('#mode > label.active input').val();
         var youSay = $('#ysNum').val();
         var url = '/getYousayData/?rm=' + revMod + '&ln=' + lvlNum + '&ys=' + youSay;
+        
+        setCookie('lvl', lvlNum);
+        setCookie('md', revMod);
+        setCookie('ys', youSay);
         
         $('#myLargeModalLabel').html('YouSay #' + youSay);
         $('.modal-body-body').html("");
@@ -97,7 +105,7 @@ function go(i, dir) {
         
         // link to speaking
         if (!Boolean(eval(ys_data[i].local)) && Boolean(eval(ys_data[i].sentence))) {
-            $('.modal-body-body .cont').last().append('<a href="http://195.74.53.116/YouSay/Sounds/' + ys_data[i].link + '.mp3">' + ys_data[i].data.replace(/\*/gi, '') + '</a>');
+            $('.modal-body-body .cont').last().append('<a onclick="javascript:speak(\''+ ys_data[i].link +'\')" href="#">' + ys_data[i].data.replace(/\*/gi, '') + '</a>');
             $('.modal-body-body .cont').last().css('width','100%');
             lastStep = true;
         } else {
@@ -125,7 +133,10 @@ function addData(index, local, sentence, data, link){
     ys_data.push(item);
 }
 
-// Set/Get cookie are not used temporary
+function speak(mp3){
+    new Audio('http://195.74.53.116/YouSay/Sounds/' + mp3 + '.mp3').play();
+}
+
 function setCookie(key, value) {
     var expires = new Date();
     expires.setTime(expires.getTime() + (1 * 24 * 60 * 60 * 1000));
@@ -134,4 +145,18 @@ function setCookie(key, value) {
 function getCookie(key) {
     var keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
     return keyValue ? keyValue[2] : null;
+}
+
+function setControls(lvl, md, ys) {
+    lvl = lvl || 1;
+    md = md || 1;
+    ys = ys || 1;
+    
+    $('#level label').removeClass('active');
+    $('#lvl' + lvl).parent().addClass('active');
+    
+    $('#mode label').removeClass('active');
+    $('#mode input[value="' + md + '"]').parent().addClass('active');
+    
+    $('#ysNum').val(ys);
 }

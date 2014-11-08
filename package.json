@@ -5,7 +5,8 @@
   "dependencies": {
     "express": "3.0.0alpha4",
     "jade": "*",
-    "stylus": "*",
-    "nib": "*"
+    "nib": "*",
+    "request": "^2.47.0",
+    "stylus": "*"
   }
 }

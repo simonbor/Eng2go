@@ -1,7 +1,7 @@
 ﻿extend layout
 block content
   .review-template
-    p
+    p(ondblclick="$('#level .btn-default').show()")
       | Choose YouSay Level
       .btn-group(data-toggle="buttons")#level
         label.btn.btn-default.active
@@ -10,9 +10,21 @@ block content
         label.btn.btn-default
           input(type="radio", name="level", id="lvl2", value="2") 
           | Level 2
-        label.btn.btn-default
+        label.btn.btn-default(style="border-bottom-right-radius:4px;border-top-right-radius:4px;")
           input(type="radio", name="level", id="lvl3", value="3") 
           | Level 3
+        label.btn.btn-default(style="display: none")
+          input(type="radio", name="level", id="lvl4", value="4") 
+          | Level 4
+        label.btn.btn-default(style="display: none")
+          input(type="radio", name="level", id="lvl5", value="5") 
+          | Level 5
+        label.btn.btn-default(style="display: none")
+          input(type="radio", name="level", id="lvl6", value="6") 
+          | Level 6
+        label.btn.btn-default(style="display: none")
+          input(type="radio", name="level", id="lvl7", value="7")
+          | Level 7
     p
       | Choose YouSay Type
       .btn-group(data-toggle="buttons")#mode
@@ -28,7 +40,8 @@ block content
     p
       | Choose YouSay Number
       .input-group
-        input(type="number", min="1", max="35", value="1", maxlength="2", size="2").form-control#ysNum
+        input(type="range", min="1", max="35", value="1", maxlength="2", size="2" style="float:left;width:20%")#ysNum
+        //input(type="number", min="1", max="35", value="1", maxlength="2", size="2" style="float:left;width:35%").form-control#ysNum
         span.input-group-btn
           //button.btn.btn-default(type="button") Go!
           button.btn.btn-default(data-toggle="modal" data-target=".bs-example-modal-lg")#goBtn Go!

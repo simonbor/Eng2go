@@ -45,8 +45,8 @@ exports.auth = function (req, res) {
             uri: "http://english2go.com/studentZone/default.asp",
             method: "POST",
             form: {
-                username: username, // 'il4736gg',
-                password: password, // 'afs25'
+                username: username,
+                password: password,
             }
         }, function (error, response, body) {
             if (error) {
