@@ -19,7 +19,9 @@
     <Content Include="Notes.txt" />
     <Content Include="package.json" />
     <Compile Include="app.js" />
+    <Compile Include="public\bs\js\bootstrap-slider.js" />
     <Compile Include="routes\index.js" />
+    <Content Include="public\bs\css\bootstrap-slider.css" />
     <Content Include="public\css\review.css" />
     <Content Include="public\css\signin.css" />
     <Content Include="views\about.jade" />

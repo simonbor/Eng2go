@@ -6,7 +6,12 @@ $(document).ready(function () {
     setControls(getCookie('lvl'), getCookie('md'), getCookie('ys'));
     
     // Set the range control behavior and style    
-    $(":range").rangeinput();
+    //$(":range").rangeinput();
+    // With JQuery
+    $("#ysRange").slider();
+    $("#ysRange").on("slide", function (slideEvt) {
+        $("#ysNum").val(slideEvt.value);
+    });
     
     $('#prev').on('click', function () {
         goPrev();
@@ -25,7 +30,7 @@ $(document).ready(function () {
         setCookie('md', revMod);
         setCookie('ys', youSay);
         
-        $('#myLargeModalLabel').html('YouSay #' + youSay);
+        $('#myLargeModalLabel').html('YouSay ' + youSay);
         $('.modal-body-body').html("");
         ys_data.length = 0;
         index = 3;
@@ -159,4 +164,5 @@ function setControls(lvl, md, ys) {
     $('#mode input[value="' + md + '"]').parent().addClass('active');
     
     $('#ysNum').val(ys);
+    $('#ysRange').attr('data-slider-value',ys);
 }

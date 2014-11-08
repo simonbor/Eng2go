@@ -40,12 +40,12 @@ block content
     p
       | Choose YouSay Number
       .input-group
-        input(type="range", min="1", max="35", value="1", maxlength="2", size="2" style="width:20%").form-control#ysNum
-        //input(type="number", min="1", max="35", value="1", maxlength="2", size="2" style="float:left;width:35%").form-control#ysNum
+        input(type="text", value="1", style="float:right;width:67%;" data-slider-min="1" data-slider-max="35" data-slider-step="1" data-slider-value="1").form-control#ysRange
+        input(type="text", min="1", value="1", style="float:right;width:25%").form-control#ysNum
         span.input-group-btn
-          //button.btn.btn-default(type="button") Go!
           button.btn.btn-default(data-toggle="modal" data-target=".bs-example-modal-lg")#goBtn Go!
-  
+        
+        // modal dialog window (popup)  
         .modal.fade.bs-example-modal-lg(tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true")
           .modal-dialog.modal-lg
             .modal-content
@@ -53,7 +53,7 @@ block content
                 button(type="button" class="close" data-dismiss="modal")
                   span(aria-hidden="true") x
                   span.sr-only Close
-                h4.modal-title#myLargeModalLabel YouSay #13
+                h4.modal-title#myLargeModalLabel YouSay #
               .modal-body 
                 .modal-body-header#m_header
                 .modal-body-body
