@@ -78,7 +78,7 @@ code {
 
 /* slider root element */
 .slider {
-    background:#3C72E6 url(/media/img/gradient/h30.png) repeat-x 0 0;
+    background:#e6e6e6;
     height:9px;
     position:relative;
     cursor:pointer;
@@ -102,7 +102,7 @@ code {
 
 /* drag handle */
 .handle {
-    background:#fff url(/media/img/gradient/h30.png) repeat-x 0 0;
+    background:#fff;
     height:28px;
     width:28px;
     top:-12px;

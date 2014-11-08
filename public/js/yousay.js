@@ -149,7 +149,7 @@ function getCookie(key) {
 
 function setControls(lvl, md, ys) {
     lvl = lvl || 1;
-    md = md || 1;
+    md = md || 'fr';
     ys = ys || 1;
     
     $('#level label').removeClass('active');
