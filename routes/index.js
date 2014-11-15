@@ -22,7 +22,7 @@ exports.index = function (req, res) {
     if (!req.session.cook) {
         res.redirect('/login');
     } else {
-        res.render('index', { title: 'Home' });
+        res.render('index', { title: 'About' });
     }
 };
 exports.login = function (req, res) {
@@ -32,7 +32,7 @@ exports.review = function (req, res) {
     if (!req.session.cook) {
         res.redirect('/login');
     } else {
-        res.render('review', { title: 'Review' });
+        res.render('review', { title: 'Review', am: req.query.am }); // am - Admin Mode
     }
 };
 exports.auth = function (req, res) {
@@ -49,12 +49,13 @@ exports.auth = function (req, res) {
                 password: password,
             }
         }, function (error, response, body) {
-            if (error) {
-                res.redirect('/login')
+            if (error || response.headers.location.indexOf('english2go.com') > -1) {
+                res.redirect('/login');
+            } else {
+                req.session.cook = response.headers['set-cookie'].toString();
+                res.setHeader("set-cookie", response.headers['set-cookie'].toString());
+                res.redirect('/review');
             }
-            req.session.cook = response.headers['set-cookie'].toString();
-            res.setHeader("set-cookie", response.headers['set-cookie'].toString());
-            res.redirect('/review')
         });
     }
 };

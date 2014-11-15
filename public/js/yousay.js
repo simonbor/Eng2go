@@ -50,7 +50,7 @@ $(document).ready(function () {
             $.each(status.split('#'), function (index, value) {
                 var link = '', data;
 
-                value = value.replace(/\'/gi, '\'\'').replace(/\"/gi, '\\"\"');
+                //value = value.replace(/\'/gi, '\'\'').replace(/\"/gi, '\\"\"'); // May be this isn't necessary
                 if (value.indexOf('@') > -1) {
                     link = value.substr(value.indexOf('@') + 1 , value.length);
                     data = value.substr(0, value.indexOf('@') - 1);
