@@ -32,7 +32,7 @@ exports.review = function (req, res) {
     if (!req.session.cook) {
         res.redirect('/login');
     } else {
-        res.render('review', { title: 'Review', am: req.query.am }); // am - Admin Mode
+        res.render('review', { title: 'Review', ll: req.query.ll }); // am - Admin Mode
     }
 };
 exports.auth = function (req, res) {
@@ -54,7 +54,7 @@ exports.auth = function (req, res) {
             } else {
                 req.session.cook = response.headers['set-cookie'].toString();
                 res.setHeader("set-cookie", response.headers['set-cookie'].toString());
-                res.redirect('/review');
+                res.redirect('/review/?ll=3');
             }
         });
     }
@@ -84,13 +84,55 @@ exports.getYousayData = function (req, res) {
             
             // Difficults to convert 'body' to json string before encoding hebrew problems
             // body  - is a buffer
-            // toString() encode values by 'UTF8' encoding and it is broke hevrew data
+            // toString() encode values by 'UTF8' encoding and it is broke Hebrew data
             //var jsonRes = '[' + body.toString('').replace(/#/gi, '][') + ']';
             //var buffer = new Buffer(body.toString());
             
             res.end(body);
         }
     });
+};
+
+exports.contact = function (req, res) {
+    if (req.method == 'POST') {
+        var nodemailer = require('nodemailer');
+        //var transporter = nodemailer.createTransport();
+        
+        //var transporter = nodemailer.createTransport({
+        //    service: 'gmail',
+        //    auth: {
+        //        user: 'simonbor@gmail.com',
+        //        pass: 'goog88open'
+        //    }
+        //});        
+        
+        var transporter = nodemailer.createTransport("SMTP", {
+            service: "Mailgun", // sets automatically host, port and connection security settings
+            auth: {
+                user: "api",
+                pass: "key-60a54fe5c36c1a990a44af752429e521"
+            }
+        });
+
+        var mailOptions = {
+            from: 'contact@english2go.evennode.com',
+            to: 'admin@bestone.co.il',
+            subject: 'Contact from ' + req.body.name + ' (' + req.body.email + ')',
+            text: req.body.message
+        };
+        
+        transporter.sendMail(mailOptions, function (error, info) {
+            if (error) {
+                console.log(error);
+            } else {
+                console.log('Message sent: ' + info.response);
+            }
+        });
+
+        res.render('contact', { title: 'Contact', name: req.body.name });
+    } else {
+        res.render('contact', { title: 'Contact' });
+    }
 };
 
 /*
