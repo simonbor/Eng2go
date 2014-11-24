@@ -34,6 +34,8 @@ app.get('/', routes.index);
 app.get('/login', routes.login);
 app.post('/auth', routes.auth);
 app.get('/review', routes.review);
+app.get('/contact', routes.contact);
+app.post('/contact', routes.contact);
 app.get('/getYousayData', routes.getYousayData);
 
 app.listen(3000)    

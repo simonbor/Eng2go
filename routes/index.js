@@ -94,41 +94,13 @@ exports.getYousayData = function (req, res) {
 };
 
 exports.contact = function (req, res) {
+    if (!req.session.cook)
+        res.redirect('/login');
+        
     if (req.method == 'POST') {
         var nodemailer = require('nodemailer');
-        //var transporter = nodemailer.createTransport();
-        
-        //var transporter = nodemailer.createTransport({
-        //    service: 'gmail',
-        //    auth: {
-        //        user: 'simonbor@gmail.com',
-        //        pass: 'goog88open'
-        //    }
-        //});        
-        
-        var transporter = nodemailer.createTransport("SMTP", {
-            service: "Mailgun", // sets automatically host, port and connection security settings
-            auth: {
-                user: "api",
-                pass: "key-60a54fe5c36c1a990a44af752429e521"
-            }
-        });
-
-        var mailOptions = {
-            from: 'contact@english2go.evennode.com',
-            to: 'admin@bestone.co.il',
-            subject: 'Contact from ' + req.body.name + ' (' + req.body.email + ')',
-            text: req.body.message
-        };
-        
-        transporter.sendMail(mailOptions, function (error, info) {
-            if (error) {
-                console.log(error);
-            } else {
-                console.log('Message sent: ' + info.response);
-            }
-        });
-
+        // Mail send mechanism place here
+        // The previous version see in the Source Safe history
         res.render('contact', { title: 'Contact', name: req.body.name });
     } else {
         res.render('contact', { title: 'Contact' });

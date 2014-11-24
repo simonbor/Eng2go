@@ -21,9 +21,9 @@ $(document).ready(function () {
     });
 
     $('#goBtn').on('click', function () {
-        var lvlNum = $('#level > label.active input').val();
-        var revMod = $('#mode > label.active input').val();
-        var youSay = $('#ysNum').val();
+        var lvlNum = $('#level > label.active input').val() || 1;
+        var revMod = $('#mode > label.active input').val() || 'fr';
+        var youSay = $('#ysNum').val() || 1;
         var url = '/getYousayData/?rm=' + revMod + '&ln=' + lvlNum + '&ys=' + youSay;
         
         setCookie('lvl', lvlNum);
