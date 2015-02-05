@@ -2,7 +2,11 @@
 var express = require('express')
   , stylus = require('stylus')
   , nib = require('nib');
-var routes = require('./routes');
+//var mongo = require('mongoskin');
+//var db = mongo.db("mongodb://localhost:27017/dal_engine", { native_parser: true });
+var routes = require('./routes/index');
+var yousay = require('./routes/yousay');
+//var mongo = require('./routes/dal');
 
 var app = express();
 
@@ -38,4 +42,6 @@ app.get('/contact', routes.contact);
 app.post('/contact', routes.contact);
 app.get('/getYousayData', routes.getYousayData);
 
-app.listen(3000)    
+app.get('/yousay_data', yousay.yousay_data);
+
+app.listen(3000)

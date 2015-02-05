@@ -1,6 +1,5 @@
-﻿var index = 3;
-var ys_data = new Array();
-var lastStep;
+﻿var index = 3,
+    lastStep;
 
 $(document).ready(function () {    
     setControls(getCookie('lvl'), getCookie('md'), getCookie('ys'));
@@ -24,7 +23,7 @@ $(document).ready(function () {
         var lvlNum = $('#level > label.active input').val() || 1;
         var revMod = $('#mode > label.active input').val() || 'fr';
         var youSay = $('#ysNum').val() || 1;
-        var url = '/getYousayData/?rm=' + revMod + '&ln=' + lvlNum + '&ys=' + youSay;
+        var url = '/yousay_data/?rm=' + revMod + '&ln=' + lvlNum + '&ys=' + youSay;
         
         setCookie('lvl', lvlNum);
         setCookie('md', revMod);
@@ -46,24 +45,8 @@ $(document).ready(function () {
                 $('#m_header').empty().append('<p>Error ocured...</p>');
                 return;
             }
-
-            $.each(status.split('#'), function (index, value) {
-                var link = '', data;
-
-                //value = value.replace(/\'/gi, '\'\'').replace(/\"/gi, '\\"\"'); // May be this isn't necessary
-                if (value.indexOf('@') > -1) {
-                    link = value.substr(value.indexOf('@') + 1 , value.length);
-                    data = value.substr(0, value.indexOf('@') - 1);
-                } else {
-                    data = value.replace(/\*/gi, '');
-                }
-
-                if ((index + 1) % 2 == 0) {
-                    addData(index, false, value.indexOf('*') > -1, data, link);
-                } else {
-                    addData(index, true, value.indexOf('*') > -1, data, link);
-                }
-            });
+            
+            ys_data = JSON.parse(status);
         }
     });
 });
@@ -125,17 +108,6 @@ function go(i, dir) {
         }
 
     }
-}
-
-function addData(index, local, sentence, data, link){
-    var item = {
-        "index": index, 
-        "local": local, 
-        "sentence": sentence, 
-        "data": data, 
-        "link": link
-    };
-    ys_data.push(item);
 }
 
 function speak(mp3){

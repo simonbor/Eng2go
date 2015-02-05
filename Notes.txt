@@ -1,2 +1,27 @@
 ﻿jQuery requestHeaders value is - 
 "text/javascript, application/javascript, application/ecmascript, application/x-ecmascript, */*; q=0.01"
+
+
+//////////////////////////////////////////////
+MongoDB
+----------------------------------------------
+run cmd ->
+cmd /k cd "c:\Users\Simon Borsky\Documents\Visual Studio 2013\Projects\Eng2go\data\" & mongod --dbpath .
+----------------------------------------------
+run another cmd ->
+mongo ->
+----------------------------------------------
+> use test_db
+switched to db test_db
+> db.test_table.insert({"name": "Simon", "lName": "Borsky"})
+WriteResult({ "nInserted" : 1 })
+> db.find()
+2015-01-15T09:10:52.664+0200 TypeError: Property 'find' of object test_db is not
+ a function
+> db.test_table.find()
+{ "_id" : ObjectId("54b767f0d666fddf9b317d77"), "name" : "Simon", "lName" : "Bor
+sky" }
+>
+----------------------------------------------
+https://github.com/simonbor/mongodb-presentation
+//////////////////////////////////////////////
