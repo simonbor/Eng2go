@@ -9,7 +9,7 @@ block content
        - levels = levels > 10 ? 10 : levels;
        - for (var i = 1; i < levels; ++i) {
          label.btn.btn-default.active
-           input(type="radio", name="level", id="lvl1", value=i) 
+           input(type="radio", name="level", id="lvl#{i}", value=i) 
            | Level #{i}
        - }
     p

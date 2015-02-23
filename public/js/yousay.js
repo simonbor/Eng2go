@@ -1,4 +1,5 @@
 ﻿var index = 3,
+    ys_data = new Array(),
     lastStep;
 
 $(document).ready(function () {    
@@ -45,7 +46,7 @@ $(document).ready(function () {
                 $('#m_header').empty().append('<p>Error ocured...</p>');
                 return;
             }
-            
+                        
             ys_data = JSON.parse(status);
         }
     });
@@ -60,9 +61,9 @@ function goPrev() {
     if (index > 3) {
         go(index, 'b');
 
-        if (ys_data[index - 1].link != '') {
+        if (ys_data[index - 1].li != '') {
             --index;
-            while (ys_data[index - 1].link == '' && index > 4) {
+            while (ys_data[index - 1].li == '' && index > 4) {
                 --index;
             }
             go(index++, 'f');
@@ -89,19 +90,19 @@ function go(i, dir) {
         }
 
         $('.modal-body-body').append($('<div class="cont" data-id="' + i + '"></div>'));        
-        $('.modal-body-body .cont').last().css('direction', Boolean(eval(ys_data[i].local)) ? ys_data[2].data : ys_data[3].data);
+        $('.modal-body-body .cont').last().css('direction', Boolean(eval(ys_data[i].lo)) ? ys_data[2].da : ys_data[3].da);
         
         // link to speaking
-        if (!Boolean(eval(ys_data[i].local)) && Boolean(eval(ys_data[i].sentence))) {
-            $('.modal-body-body .cont').last().append('<a onclick="javascript:speak(\''+ ys_data[i].link +'\')" href="#">' + ys_data[i].data.replace(/\*/gi, '') + '</a>');
+        if (!Boolean(eval(ys_data[i].lo)) && Boolean(eval(ys_data[i].se))) {
+            $('.modal-body-body .cont').last().append('<a onclick="javascript:speak(\''+ ys_data[i].li +'\')" href="#">' + ys_data[i].da.replace(/\*/gi, '') + '</a>');
             $('.modal-body-body .cont').last().css('width','100%');
             lastStep = true;
         } else {
-            $('.modal-body-body .cont').last().html(ys_data[i].data.replace(/\*/gi, ''));
+            $('.modal-body-body .cont').last().html(ys_data[i].da.replace(/\*/gi, ''));
         }
         
         // The "-" or separator line
-        if (!Boolean(eval(ys_data[i].local)) || Boolean(eval(ys_data[i].sentence))) {
+        if (!Boolean(eval(ys_data[i].lo)) || Boolean(eval(ys_data[i].se))) {
             $('.modal-body-body').append($('<div class="cont separator" data-id="-1">&nbsp;</div>'));
         } else {
             $('.modal-body-body').append($('<div class="cont" data-id="-1">&nbsp;-&nbsp;</div>'));
