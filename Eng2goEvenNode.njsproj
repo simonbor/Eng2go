@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{b8c05c08-552a-4b77-80e7-e90bc37ce5ce}</ProjectGuid>
     <ProjectHome />
-    <ProjectView>ShowAllFiles</ProjectView>
+    <ProjectView>ProjectFiles</ProjectView>
     <StartupFile>app.js</StartupFile>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
@@ -18,22 +18,14 @@
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
   <ItemGroup>
+    <Content Include="Notes.txt" />
     <Content Include="package.json" />
     <Compile Include="app.js" />
-    <Content Include="app_178\levels.metadata.json" />
-    <Content Include="app_178\you_says.metadata.json" />
-    <Content Include="app_178\you_says_items.metadata.json" />
-    <Content Include="data\levels.metadata.json" />
-    <Content Include="data\you_says.metadata.json" />
-    <Content Include="data\you_says_items.metadata.json" />
     <Compile Include="routes\dal.js" />
     <Compile Include="routes\index.js" />
     <Compile Include="routes\utils.js" />
     <Compile Include="routes\yousay.js" />
-    <Content Include="tmp\Notes.txt" />
-    <Content Include="tmp\restart.txt" />
-    <Content Include="tmp\package.json" />
-    <Compile Include="tmp\app.js" />
+    <Content Include="README.md" />
     <Content Include="views\about.jade" />
     <Content Include="views\contact.jade" />
     <Content Include="views\index.jade" />
@@ -98,36 +90,8 @@
     <Content Include="public\super\lp\img\preview\thumb-2.jpg" />
     <Content Include="public\super\lp\img\preview\thumb-3.jpg" />
     <Content Include="public\super\lp\img\preview\thumb-4.jpg" />
-    <Compile Include="super\lp\js\bootstrap.js" />
-    <Compile Include="super\lp\js\custom.js" />
-    <Compile Include="super\lp\js\jquery-1.9.1.min.js" />
-    <Compile Include="super\lp\js\jquery.flexslider-min.js" />
-    <Compile Include="super\lp\js\jquery.form.js" />
-    <Compile Include="super\lp\js\jquery.prettyPhoto.js" />
-    <Compile Include="super\lp\js\jquery.validate.js" />
-    <Compile Include="super\lp\js\modernizr.js" />
-    <Content Include="super\lp\img\icons\icon-1.png" />
-    <Content Include="super\lp\img\icons\icon-2.png" />
-    <Content Include="super\lp\img\icons\icon-3.png" />
-    <Content Include="super\lp\img\icons\icon-social-facebook.png" />
-    <Content Include="super\lp\img\icons\icon-social-twitter.png" />
-    <Content Include="super\lp\img\preview\img-1.png" />
-    <Content Include="super\lp\img\preview\img-3.png" />
-    <Content Include="super\lp\img\preview\share-prev.png" />
-    <Content Include="super\lp\img\preview\slide-1.png" />
-    <Content Include="super\lp\img\preview\slide-2.png" />
-    <Content Include="super\lp\img\preview\slide-3.png" />
-    <Content Include="super\lp\img\preview\slide-1_.jpg" />
-    <Content Include="super\lp\img\preview\slide-2_.jpg" />
-    <Content Include="super\lp\img\preview\slide-3_.jpg" />
-    <Content Include="super\lp\img\preview\thumb-1.jpg" />
-    <Content Include="super\lp\img\preview\thumb-2.jpg" />
-    <Content Include="super\lp\img\preview\thumb-3.jpg" />
-    <Content Include="super\lp\img\preview\thumb-4.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="app_178" />
-    <Folder Include="data" />
     <Folder Include="public" />
     <Folder Include="public\bs" />
     <Folder Include="public\bs\css" />
@@ -143,13 +107,6 @@
     <Folder Include="public\super\lp\img\preview" />
     <Folder Include="public\super\lp\js" />
     <Folder Include="routes" />
-    <Folder Include="super" />
-    <Folder Include="super\lp" />
-    <Folder Include="super\lp\img" />
-    <Folder Include="super\lp\img\icons" />
-    <Folder Include="super\lp\img\preview" />
-    <Folder Include="super\lp\js" />
-    <Folder Include="tmp" />
     <Folder Include="typings\" />
     <Folder Include="typings\globals\" />
     <Folder Include="typings\globals\nodemailer\" />

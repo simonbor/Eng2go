@@ -1,4 +1,8 @@
 node_modules
+super
+tmp
+data
+app_178
 bin
 obj
 *.txt
