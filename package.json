@@ -1,7 +1,11 @@
 {
-  "name": "MySite",
+  "name": "english-for-stupid",
   "version": "0.0.1",
-  "private": "true",
+  "private": true,
+  "main": "app.js",
+  "author": {
+    "name": "SimonBor"
+  },
   "dependencies": {
     "express": "3.0.0alpha4",
     "jade": "*",
