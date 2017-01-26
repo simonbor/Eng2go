@@ -1,0 +1,22 @@
+﻿extend layout
+block content
+  if name
+    // #{name}
+    h1 Email sent, Thank You!
+  else
+    #divMain
+      form(method="post" action="/contact" role="form").form-contact
+        H1 Contact Us
+        p.lead
+          | For any kind of proposal or question please mail to admin@bestone.co.il
+      // Contact Form is temporary disabled
+        fieldset
+          input(type="text" name="name" id="name" value="" class="form-control" placeholder="Name" required autofocus)
+          input(type="email" name="email" id="email" value="" class="form-control" placeholder="Email" required)
+          textarea(rows="11" name="message" id="message" class="form-control" placeholder="Comments" required data-validation-required-message="Please enter your message" minlength="5" data-validation-minlength-message="Min 5 characters" maxlength="999" style="resize:none" aria-invalid="false")
+          input(type="submit" value="Send Your Message" class="btn btn-primary pull-right" title="Click here to submit your message!")
+block sidebar
+  .widget
+    h1 Widget
+    p
+      | Vivamus hendrerit arcu sed erat molestie

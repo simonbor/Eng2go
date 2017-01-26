@@ -1,0 +1,107 @@
+﻿/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+body > .container {
+  padding: 60px 15px 0;
+}
+.container .text-muted {
+  margin: 20px 0;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+code {
+  font-size: 80%;
+}
+
+
+/*
+------------------------------------------------- */
+.modal-body-body {
+    float: right; 
+    width: 100%;
+    min-height: 150px;
+    font-size:larger;
+}
+
+.modal-body-body .cont{
+    float: right;
+    width: auto;
+
+    border: 0px solid;
+}
+
+.modal-body-body .cont.separator {
+    width: 100%;
+    line-height: 5px;
+}
+
+/*
+------------------------------------------------- */
+.starter-template .review-template {
+  max-width: 300px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.starter-template .review-template .input-group {
+    width: 215px;
+}
+
+.review-template p {
+    font-size: 21px;
+    font-weight: 300;
+}
+
+/* slider element */
+.slider.slider-horizontal{
+    height: 35px;
+}
+
+/*
+    form-contact -------------------------------*/
+.form-contact {
+  max-width: 600px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+/*
+    Maintenance  -------------------------------*/
+textarea#ta, fieldset#fs {
+    float: left;
+    margin-left: 10px;
+}
+fieldset#fs {
+    width: 155px;
+}
+fieldset#fs input, fieldset#fs button {
+    margin-bottom: 5px
+}
+
+
+

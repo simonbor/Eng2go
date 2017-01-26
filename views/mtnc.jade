@@ -1,0 +1,25 @@
+﻿extend layout
+block content
+  .mtnc
+    h1 #{title}
+    p.lead
+      textarea#ta(rows='20',cols='60')
+      fieldset#fs
+        legend Control Panel
+        | levels (from/to):
+        p
+          input(type='text', data-bind='value: lvlsMin', style='width: 75px')
+          =" "
+          input(type='text', data-bind='value: lvlsMax', style='width: 75px')
+        | yousays:
+        input(type='text', data-bind='value: yous')
+        | delay:
+        input(type='text', data-bind='value: wait')
+        button(data-bind='disable: hasStarted, click: start') Start
+        =" "
+        button(data-bind='click: stop') Stop
+        =" "
+        button(data-bind='click: clear') Clear
+extend layout
+block scriptsContent
+  script(src="/js/mtncViewModel.js")

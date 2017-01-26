@@ -1,0 +1,25 @@
+﻿doctype
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name="description" content="")
+    meta(name="author" content="")
+    link(rel='stylesheet', href='/bs/css/bootstrap.css')
+    link(rel='stylesheet', href='/css/signin.css')
+    script(src="//code.jquery.com/jquery-1.11.1.js")
+    title #{title} - Eng2go
+  body
+    .container
+      form(class="form-signin" role="form" action="/auth" method="post")
+        h2(class="form-signin-heading") Please sign in
+        input(type="username" name="username" class="form-control" placeholder="User name" required autofocus)
+        input(type="password" name="password" class="form-control" placeholder="Password" required)
+        div(class="checkbox")
+          label
+            input(type="checkbox" value="remember-me")
+            | Remember me
+        button(class="btn btn-lg btn-primary btn-block" type="submit") Sign in
+    //IE10 viewport hack for Surface/desktop Windows 8 bug
+    script(src="//getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js")

@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "Eng2goEvenNode", "Eng2goEvenNode.njsproj", "{B8C05C08-552A-4B77-80E7-E90BC37CE5CE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B8C05C08-552A-4B77-80E7-E90BC37CE5CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8C05C08-552A-4B77-80E7-E90BC37CE5CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8C05C08-552A-4B77-80E7-E90BC37CE5CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8C05C08-552A-4B77-80E7-E90BC37CE5CE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
