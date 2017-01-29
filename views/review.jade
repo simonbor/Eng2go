@@ -6,7 +6,7 @@ block content
       .btn-group(data-toggle="buttons")#level
        - ll = ll || 1;
        - var levels = parseInt(ll) + 1;
-       - levels = levels > 10 ? 10 : levels;
+       - levels = levels > 20 ? 20 : levels;
        - for (var i = 1; i < levels; ++i) {
          label.btn.btn-default.active
            input(type="radio", name="level", id="lvl#{i}", value=i) 

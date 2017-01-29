@@ -1,6 +1,7 @@
 node_modules
 tmp
-data/
+data
+public/super
 app_178
 bin
 obj

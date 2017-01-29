@@ -1,16 +1,10 @@
-﻿var Db = require('mongodb').Db,
-    Server = require('mongodb').Server,
-    Connection = require('mongodb').Connection;
+﻿var mongodb = require('mongodb');
+var uri = process.env.MONGOLAB_URI;
+var db;
 
-var config = { mongo: { host: "localhost", port: 27017, user: "app_178", db: "app_178" } };
-var db = new Db(config.mongo.db, new Server(config.mongo.host, config.mongo.port, {}), {});
-
-db.open(function (err, db) {
+mongodb.MongoClient.connect(uri,function(err, dbMongoLab) {
     if (!err) {
-        //db.authenticate(config.mongo.user, "1234qwer", function (err, res) {
-        //    if (err)
-        //        console.log(err);
-        //});
+        db = dbMongoLab;
     } else {
         console.log(err);
     };

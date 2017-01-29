@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{b8c05c08-552a-4b77-80e7-e90bc37ce5ce}</ProjectGuid>
     <ProjectHome />
-    <ProjectView>ProjectFiles</ProjectView>
+    <ProjectView>ShowAllFiles</ProjectView>
     <StartupFile>app.js</StartupFile>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
@@ -18,6 +18,7 @@
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
   <ItemGroup>
+    <Content Include=".gitignore" />
     <Content Include="Notes.txt" />
     <Content Include="package.json" />
     <Compile Include="app.js" />
@@ -48,48 +49,6 @@
     <Compile Include="public\bs\js\bootstrap-slider.js" />
     <Compile Include="public\bs\js\bootstrap.js" />
     <Compile Include="public\bs\js\bootstrap.min.js" />
-    <Content Include="public\super\lp\index.html" />
-    <Content Include="public\super\lp\logomvc.fw.png" />
-    <Content Include="public\super\lp\README.md" />
-    <Content Include="public\super\lp\css\bootstrap-override.css" />
-    <Content Include="public\super\lp\css\bootstrap-responsive.css" />
-    <Content Include="public\super\lp\css\bootstrap.css" />
-    <Content Include="public\super\lp\css\flexslider.css" />
-    <Content Include="public\super\lp\css\prettyPhoto.css" />
-    <Content Include="public\super\lp\css\style.css" />
-    <Content Include="public\super\lp\img\bg_direction_nav.png" />
-    <Content Include="public\super\lp\img\iPhone-mockup.png" />
-    <Content Include="public\super\lp\img\iPhone5s-mockup.png" />
-    <Content Include="public\super\lp\img\logo-footer.png" />
-    <Content Include="public\super\lp\img\logo-mvc.png" />
-    <Content Include="public\super\lp\img\logo.png" />
-    <Content Include="public\super\lp\img\logo-mvc.jpg" />
-    <Compile Include="public\super\lp\js\bootstrap.js" />
-    <Compile Include="public\super\lp\js\custom.js" />
-    <Compile Include="public\super\lp\js\jquery-1.9.1.min.js" />
-    <Compile Include="public\super\lp\js\jquery.flexslider-min.js" />
-    <Compile Include="public\super\lp\js\jquery.form.js" />
-    <Compile Include="public\super\lp\js\jquery.prettyPhoto.js" />
-    <Compile Include="public\super\lp\js\jquery.validate.js" />
-    <Compile Include="public\super\lp\js\modernizr.js" />
-    <Content Include="public\super\lp\img\icons\icon-1.png" />
-    <Content Include="public\super\lp\img\icons\icon-2.png" />
-    <Content Include="public\super\lp\img\icons\icon-3.png" />
-    <Content Include="public\super\lp\img\icons\icon-social-facebook.png" />
-    <Content Include="public\super\lp\img\icons\icon-social-twitter.png" />
-    <Content Include="public\super\lp\img\preview\img-1.png" />
-    <Content Include="public\super\lp\img\preview\img-3.png" />
-    <Content Include="public\super\lp\img\preview\share-prev.png" />
-    <Content Include="public\super\lp\img\preview\slide-1.png" />
-    <Content Include="public\super\lp\img\preview\slide-2.png" />
-    <Content Include="public\super\lp\img\preview\slide-3.png" />
-    <Content Include="public\super\lp\img\preview\slide-1_.jpg" />
-    <Content Include="public\super\lp\img\preview\slide-2_.jpg" />
-    <Content Include="public\super\lp\img\preview\slide-3_.jpg" />
-    <Content Include="public\super\lp\img\preview\thumb-1.jpg" />
-    <Content Include="public\super\lp\img\preview\thumb-2.jpg" />
-    <Content Include="public\super\lp\img\preview\thumb-3.jpg" />
-    <Content Include="public\super\lp\img\preview\thumb-4.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="public" />
@@ -99,23 +58,12 @@
     <Folder Include="public\bs\js" />
     <Folder Include="public\css" />
     <Folder Include="public\js" />
-    <Folder Include="public\super" />
-    <Folder Include="public\super\lp" />
-    <Folder Include="public\super\lp\css" />
-    <Folder Include="public\super\lp\img" />
-    <Folder Include="public\super\lp\img\icons" />
-    <Folder Include="public\super\lp\img\preview" />
-    <Folder Include="public\super\lp\js" />
     <Folder Include="routes" />
-    <Folder Include="typings\" />
-    <Folder Include="typings\globals\" />
     <Folder Include="typings\globals\nodemailer\" />
-    <Folder Include="typings\globals\node\" />
     <Folder Include="views" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="typings\globals\nodemailer\index.d.ts" />
-    <TypeScriptCompile Include="typings\globals\node\index.d.ts" />
     <TypeScriptCompile Include="typings\index.d.ts" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
