@@ -5,6 +5,7 @@ var routes = require('./routes/index');
 var yousay = require('./routes/yousay');
 
 var app = express();
+var port = process.env.PORT || 3000;
 
 function compile(str, path) {
     return stylus(str)
@@ -37,4 +38,4 @@ app.post('/contact', routes.contact);
 app.get('/yousay_data', yousay.yousay_data);
 app.get('/mtnc', routes.mtnc);
 
-app.listen(3000)
+app.listen(port);
