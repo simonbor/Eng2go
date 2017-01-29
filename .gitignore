@@ -6,4 +6,5 @@ app_178
 bin
 obj
 *.txt
-.vs
+*.vs
+*.njsproj
