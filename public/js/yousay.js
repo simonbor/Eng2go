@@ -1,5 +1,6 @@
 ﻿var index = 3,
     ys_data = new Array(),
+    localDirection, foreignDirection,
     lastStep,
     STARTED_ITEM_NUM = -1; // const
 
@@ -53,6 +54,9 @@ $(document).ready(function () {
             
             $('#m_header').empty();        
             ys_data = JSON.parse(status);
+            localDirection = ys_data.find(function (item) { return parseInt(item.in) === parseInt(this) }, 2).da;
+            foreignDirection = ys_data.find(function (item) { return parseInt(item.in) === parseInt(this) }, 3).da;
+
             ysViewModel.you_say_item_num(index);
         }
     });
@@ -81,6 +85,8 @@ function goPrev() {
 }
 
 function go(i, dir) {
+    var item = ys_data.find(function(item) { return parseInt(item.in) === parseInt(this) }, i);
+
     if (dir == 'b') {
         var $lastDelimeter = $('.modal-body-body .cont').last();
         $lastDelimeter.remove();
@@ -98,19 +104,19 @@ function go(i, dir) {
         }
 
         $('.modal-body-body').append($('<div class="cont" data-id="' + i + '"></div>'));        
-        $('.modal-body-body .cont').last().css('direction', Boolean(eval(ys_data[i].lo)) ? ys_data[2].da : ys_data[3].da);
+        $('.modal-body-body .cont').last().css('direction', Boolean(eval(item.lo)) ? localDirection : foreignDirection);
         
         // link to speaking
-        if (!Boolean(eval(ys_data[i].lo)) && Boolean(eval(ys_data[i].se))) {
-            $('.modal-body-body .cont').last().append('<a onclick="javascript:speak(\''+ ys_data[i].li +'\')" href="#">' + ys_data[i].da.replace(/\*/gi, '') + '</a>');
+        if (!Boolean(eval(item.lo)) && Boolean(eval(item.se))) {
+            $('.modal-body-body .cont').last().append('<a onclick="javascript:speak(\''+ item.li +'\')" href="#">' + item.da.replace(/\*/gi, '') + '</a>');
             $('.modal-body-body .cont').last().css('width','100%');
             lastStep = true;
         } else {
-            $('.modal-body-body .cont').last().html(ys_data[i].da.replace(/\*/gi, ''));
+            $('.modal-body-body .cont').last().html(item.da.replace(/\*/gi, ''));
         }
         
         // The "-" or separator line
-        if (!Boolean(eval(ys_data[i].lo)) || Boolean(eval(ys_data[i].se))) {
+        if (!Boolean(eval(item.lo)) || Boolean(eval(item.se))) {
             $('.modal-body-body').append($('<div class="cont separator" data-id="-1">&nbsp;</div>'));
         } else {
             $('.modal-body-body').append($('<div class="cont" data-id="-1">&nbsp;-&nbsp;</div>'));

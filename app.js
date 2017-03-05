@@ -1,3 +1,4 @@
+/* Module dependencies */
 var express = require('express')
   , stylus = require('stylus')
   , nib = require('nib');
@@ -5,7 +6,6 @@ var routes = require('./routes/index');
 var yousay = require('./routes/yousay');
 
 var app = express();
-var port = process.env.PORT || 3000;
 
 function compile(str, path) {
     return stylus(str)
@@ -29,6 +29,10 @@ app.use(express.bodyParser());
 app.use(express.cookieParser('shhhh, very secret'));
 app.use(express.session({ secret: 'my_secret', cookie: { maxAge: 600000 } }));
 
+//app.use(express.basicAuth(function (user, pass) {
+//    return user === 'aaa' && pass === 'bbb';
+//}));
+
 app.get('/', routes.index);
 app.get('/login', routes.login);
 app.post('/auth', routes.auth);
@@ -38,4 +42,4 @@ app.post('/contact', routes.contact);
 app.get('/yousay_data', yousay.yousay_data);
 app.get('/mtnc', routes.mtnc);
 
-app.listen(port);
+app.listen(3000)
