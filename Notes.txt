@@ -25,3 +25,7 @@ sky" }
 ----------------------------------------------
 https://github.com/simonbor/mongodb-presentation
 //////////////////////////////////////////////
+
+
+//////////////////////////////////////////////
+28/10/20 Created backup from mLab.com for mongo db "eng4stupid" to ./data folder
