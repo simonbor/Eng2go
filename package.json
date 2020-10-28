@@ -1,7 +1,12 @@
 {
   "name": "english-for-stupid",
   "version": "0.0.1",
+  "license": "ISC",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/simonbor/Eng2go.git"
+  },
   "main": "app.js",
   "author": {
     "name": "SimonBor"
